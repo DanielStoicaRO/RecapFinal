@@ -6,12 +6,11 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class Main
-{
+public class Main {
     /**
      * ArrayList resides within Java Core Libraries, so you don't need any additional libraries. In order to use it just add the following import statement:
      * import java.util.ArrayList;
-     *
+     * <p>
      * List represents an ordered sequence of values where some value may occur more than one time.
      * ArrayList is one of the List implementations built atop an array, which is able to dynamically grow and shrink as you add/remove elements.
      * Elements could be easily accessed by their indexes starting from zero.
@@ -21,8 +20,7 @@ public class Main
      * - Inserting/Deleting takes O(n) time
      * - Searching takes O(n) time for unsorted array and O(log n) for a sorted one
      */
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         listExample();
 
         listIteratorExample();
@@ -32,8 +30,7 @@ public class Main
         listFullExample();
     }
 
-    private static void listExample()
-    {
+    private static void listExample() {
         List<String> visitedCountries = new ArrayList<>();
         visitedCountries.add("Germany");
         visitedCountries.add("France");
@@ -42,14 +39,12 @@ public class Main
         visitedCountries.remove("France");
 
         // prints Germany Spain, as "France" was removed
-        for (String country : visitedCountries)
-        {
+        for (String country : visitedCountries) {
             System.out.print(country + " ");
         }
     }
 
-    private static void listIteratorExample()
-    {
+    private static void listIteratorExample() {
         List<String> visitedCountries = new ArrayList<>();
         visitedCountries.add("Germany");
         visitedCountries.add("France");
@@ -66,8 +61,7 @@ public class Main
         }
     }
 
-    private static void listSortExample()
-    {
+    private static void listSortExample() {
         List<Integer> numbers = new ArrayList<>();
         numbers.add(9);
         numbers.add(10);
@@ -76,19 +70,16 @@ public class Main
 
         System.out.println("List before sort " + numbers);
 
-        numbers.sort(new Comparator<Integer>()
-        {
+        numbers.sort(new Comparator<Integer>() {
             @Override
-            public int compare(Integer o1, Integer o2)
-            {
+            public int compare(Integer o1, Integer o2) {
                 return Integer.compare(o1, o2);
             }
         });
         System.out.println("List after sort " + numbers);
     }
 
-    private static void listFullExample()
-    {
+    private static void listFullExample() {
         // ArrayList has several constructors and we will present them all in this section.
         // First, notice that ArrayList is a generic class, so you can parameterize it with any type you want and the compiler will ensure that,
         // for example, you will not be able to put Integer values inside a collection of Strings.
@@ -118,14 +109,12 @@ public class Main
         System.out.println("I've visited Australia ? " + visitedCountries.contains("Australia"));
 
         // Foreach on the list
-        for (String country : visitedCountries)
-        {
+        for (String country : visitedCountries) {
             System.out.print(country + " ");
         }
 
         // For on the list
-        for (int i = 0; i < visitedCountries.size(); i++)
-        {
+        for (int i = 0; i < visitedCountries.size(); i++) {
             System.out.print(visitedCountries.get(i) + " ");
         }
 
